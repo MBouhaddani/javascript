@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Oefeningen</title>
+</head>
+
+<body>
+
+    <script>
+        // Oefening 1
+        function calculate(num1, num2) {
+            let sum = num1 + num2;
+            console.log(sum);
+        }
+
+        // Roep de functie aan met random getallen
+        calculate(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100));
+
+        // Oefening 2
+        function multiplyByFive(num) {
+            let product = num * 5;
+            console.log(product);
+        }
+
+        // Roep de functie aan met een random getal
+        multiplyByFive(Math.floor(Math.random() * 100));
+
+        // Oefening 3
+        function calculateMinutes(seconds) {
+            let minutes = seconds / 60;
+            console.log(minutes);
+        }
+
+        // Roep de functie aan met seconden
+        calculateMinutes(3600);
+    </script>
+
+</body>
+
+</html>
