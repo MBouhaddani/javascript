@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Clicker</h2>
+
+<button onclick="clicker()">Klik mij!</button>
+
+<p id="getal">0</p>
+
+<script>
+var getal = 0;
+function clicker() {
+  getal += 1;
+  if (getal > 10) {
+    getal = 0;
+  }
+  document.getElementById("getal").innerHTML = getal;
+}
+</script>
+
+</body>
+</html>
