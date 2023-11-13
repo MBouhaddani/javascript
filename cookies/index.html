@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+#cookie-wall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cookie-wall-content {
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#cookie-wall-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>Welkom op mijn website</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo quis lorem aliquet tincidunt. Morbi vitae nisl id nisi tincidunt sagittis. Phasellus quis tortor sed lorem consequat ullamcorper. Fusce quis nunc vitae lacus aliquam luctus. Donec sit amet augue quis leo tincidunt ultrices. Mauris auctor, lorem quis vulputate malesuada, nunc nisl aliquet leo, quis rutrum eros nisl vel leo. Sed vitae semper nisl. Quisque quis nisl sit amet sapien ultricies blandit. Sed quis nunc ut massa fringilla sagittis. Suspendisse potenti.</p>
+
+<div id="cookie-wall">
+  <div id="cookie-wall-content">
+    <h2>Wij gebruiken cookies</h2>
+    <p>Deze website maakt gebruik van cookies om uw ervaring te verbeteren. Door op "Ik accepteer" te klikken, gaat u akkoord met ons cookiebeleid.</p>
+    <button id="cookie-wall-button">Ik accepteer</button>
+  </div>
+</div>
+
+<script>
+
+var cookieWall = document.getElementById("cookie-wall");
+
+
+var cookieWallButton = document.getElementById("cookie-wall-button");
+
+
+cookieWallButton.addEventListener("click", function() {
+  
+  cookieWall.style.display = "none";
+});
+</script>
+</body>
+</html>
