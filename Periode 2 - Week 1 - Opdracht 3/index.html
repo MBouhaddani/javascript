@@ -1,0 +1,13 @@
+<form>
+  <label for="product">Product:</label>
+  <input type="text" id="product" name="product">
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var product = document.getElementById('product').value;
+    console.log(product);
+  });
+</script>
