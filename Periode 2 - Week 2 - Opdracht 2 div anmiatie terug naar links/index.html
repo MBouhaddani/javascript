@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .moving-div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            animation: moveRight 2s infinite;
+        }
+
+        @keyframes moveRight {
+            0% { left: 0; }
+            50% { left: calc(100% - 50px); }
+            100% { left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="moving-div"></div>
+</body>
+</html>
