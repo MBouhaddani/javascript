@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reaction Time Game</title>
+    <style>
+        #game-container {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #game-container.green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reaction Time Game</h1>
+    <button id="start-button" onclick="startGame()">Go</button>
+    <div id="game-container"></div>
+    <p id="reaction-time"></p>
+    <h2>Top 5 Fastest Times:</h2>
+    <ol id="top-times">
+    
+    </ol>
+
+    <script>
+        var startTime;
+        var endTime;
+        var reactionTime;
+        var topTimes = [];
+
+        function startGame() {
+            var startButton = document.getElementById("start-button");
+            startButton.style.display = "none";
+
+            var gameContainer = document.getElementById("game-container");
+            gameContainer.style.backgroundColor = "red";
+
+            setTimeout(function() {
+                gameContainer.style.backgroundColor = "green";
+                startTime = new Date().getTime();
+            }, Math.random() * 10000);
+
+            gameContainer.onclick = function() {
+                endTime = new Date().getTime();
+                reactionTime = endTime - startTime;
+                document.getElementById("reaction-time").innerHTML = "Your reaction time: " + reactionTime + " milliseconds";
+                startButton.style.display = "block";
+                updateTopTimes(reactionTime);
+            };
+        }
+
+        function updateTopTimes(time) {
+            topTimes.push(time);
+            topTimes.sort(function(a, b) {
+                return a - b;
+            });
+            if (topTimes.length > 5) {
+                topTimes.pop();
+            }
+            var topTimesList = document.getElementById("top-times");
+            topTimesList.innerHTML = "";
+            for (var i = 0; i < topTimes.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.innerHTML = topTimes[i] + " milliseconds";
+                topTimesList.appendChild(listItem);
+            }
+        }
+    </script>
+</body>
+</html>
